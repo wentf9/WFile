@@ -1,0 +1,10 @@
+server:
+  port: 3301
+spring:
+  application:
+    name: spring-boot-demo
+  datasource:
+    url: jdbc:sqlite:wfile.db
+    driver-class-name: org.sqlite.JDBC
+
+
