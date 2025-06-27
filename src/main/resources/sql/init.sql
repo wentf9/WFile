@@ -2,6 +2,7 @@ PRAGMA foreign_keys = false;
 CREATE TABLE "storage" (
   "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   "name" TEXT NOT NULL,
+  "key" TEXT NOT NULL UNIQUE,
   "type" integer NOT NULL,
   "base_path" TEXT NOT NULL,
   "access_url" TEXT NOT NULL,
