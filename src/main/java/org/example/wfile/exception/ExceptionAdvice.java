@@ -34,7 +34,7 @@ public class ExceptionAdvice {
     @ExceptionHandler(CoustomException.class)
     public ApiResponse handleCoustomException(CoustomException e, HttpServletRequest request){
         String requestURI = request.getRequestURI();
-        log.error("请求地址{},发生系统异常",requestURI,e);
+        log.error("请求地址{},发生自定义异常->code:{}|message:{}",requestURI,e.getCode(),e.getMessage(),e);
         return ApiResponse.error(e.getCode(),e.getMessage());
     }
 

@@ -7,9 +7,9 @@ import java.util.List;
 public interface FileOperater {
     int uploadFile(String path, String fileName, byte[] bytes);
     byte[] downloadFile(String path, String fileName);
-    int deleteFile(String path, String fileName);
-    int renameFile(String path, String oldName, String newName);
+    boolean deleteFile(String path);
+    boolean renameFile(String path, String newName);
     int moveFile(String path, String fileName, String destPath);
     List<FileInfo> getFileList(String path);
-    FileInfo getFileItem(String path, String fileName);
+    FileInfo getFileItem(String path);
 }

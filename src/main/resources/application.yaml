@@ -4,7 +4,6 @@ spring:
   application:
     name: spring-boot-demo
   datasource:
-    url: jdbc:sqlite:wfile.db
+    url: jdbc:sqlite:E:\code\wfile.db
     driver-class-name: org.sqlite.JDBC
-
 

@@ -12,7 +12,7 @@ public class FileOperatorFactory {
         }
         FileOperater fileOperater = null;
         try {
-            fileOperater = (FileOperater) Class.forName(storageType.getStorageClassName()).newInstance();
+            fileOperater = (FileOperater) Class.forName(storageType.getStorageClassName()).getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             log.error("FileOperatorFactory getInstance error", e);
         }

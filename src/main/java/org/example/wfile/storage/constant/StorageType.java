@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum StorageType {
-    LOCAL(1,"local","org.example.core.service.impl.LocalStorageFileOperater"),
+    LOCAL(1,"local","org.example.wfile.file.service.impl.LocalStorageFileOperator"),
     ALIYUN(2,"aliyun",""),
     TENCENT(3,"tencent",""),
     QINIU(4,"qiniu","");
@@ -21,6 +21,15 @@ public enum StorageType {
     public static StorageType getStorageType(String storageName) {
         for (StorageType storageType : StorageType.values()) {
             if (storageType.getName().equals(storageName)) {
+                return storageType;
+            }
+        }
+        return null;
+    }
+
+    public static StorageType getStorageType(int storageId) {
+        for (StorageType storageType : StorageType.values()) {
+            if (storageType.getId() == storageId) {
                 return storageType;
             }
         }
