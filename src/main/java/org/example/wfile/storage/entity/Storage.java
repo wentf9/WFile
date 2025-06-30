@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.example.wfile.file.service.FileOperater;
+import org.example.wfile.file.service.FileOperator;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -26,7 +26,7 @@ public class Storage implements Serializable {
     @TableField(value = "type")
     private int type;
     @TableField(exist = false)
-    private FileOperater fileOperater;
+    private FileOperator fileOperator;
     @TableField(value = "base_path")
     private String basePath;
     @TableField(value = "access_url")

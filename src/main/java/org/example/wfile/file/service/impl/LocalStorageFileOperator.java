@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.wfile.common.ResultCodeEnum;
 import org.example.wfile.exception.CoustomException;
 import org.example.wfile.file.entity.FileInfo;
-import org.example.wfile.file.service.FileOperater;
+import org.example.wfile.file.service.FileOperator;
 import org.example.wfile.util.FileSizeConverter;
 
 
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @Slf4j
-public class LocalStorageFileOperator implements FileOperater {
+public class LocalStorageFileOperator implements FileOperator {
     @Override
     public int uploadFile(String path, String fileName, byte[] bytes) {
         return 0;

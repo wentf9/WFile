@@ -23,7 +23,8 @@ public enum ResultCodeEnum {
     REQUEST_TIMEOUT(408, "请求超时"),
     CONFLICT(409, "请求冲突"),
     GONE(410, "请求资源已不存在"),
-    UNSUPPORTED_MEDIA_TYPE(415, "不支持的媒体类型");
+    UNSUPPORTED_MEDIA_TYPE(415, "不支持的媒体类型"),
+    STORAGE_DELETE_ERROR(505, "存储删除失败");
     private final int code;
     private final String message;
     ResultCodeEnum(int code, String message) {

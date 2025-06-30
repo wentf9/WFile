@@ -6,5 +6,7 @@ import org.example.wfile.storage.entity.Storage;
 public interface IStorageService extends IService<Storage>{
     Storage getStorageByStorageKey(String storageKey);
     boolean addStorage(Storage storage);
+    boolean removeStorage(String storageKey);
+    boolean updateStorage(Storage storage);
 
 }

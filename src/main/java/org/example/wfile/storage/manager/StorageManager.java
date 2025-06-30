@@ -1,6 +1,8 @@
 package org.example.wfile.storage.manager;
 
 import jakarta.annotation.PostConstruct;
+import org.example.wfile.file.factory.FileOperatorFactory;
+import org.example.wfile.storage.constant.StorageType;
 import org.example.wfile.storage.entity.Storage;
 
 import org.example.wfile.storage.service.impl.StorageServiceImpl;
@@ -27,6 +29,7 @@ public class StorageManager {
             return;
         }
         for (Storage storage : storageList) {
+            storage.setFileOperator(FileOperatorFactory.getInstance(StorageType.getStorageType(storage.getType())));
             storageMap.put(storage.getKey(), storage);
         }
     }

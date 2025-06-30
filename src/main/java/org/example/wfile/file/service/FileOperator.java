@@ -4,7 +4,7 @@ import org.example.wfile.file.entity.FileInfo;
 
 import java.util.List;
 
-public interface FileOperater {
+public interface FileOperator {
     int uploadFile(String path, String fileName, byte[] bytes);
     byte[] downloadFile(String path, String fileName);
     boolean deleteFile(String path);

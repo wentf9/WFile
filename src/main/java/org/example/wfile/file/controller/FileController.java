@@ -1,10 +1,11 @@
 package org.example.wfile.file.controller;
 
 import org.example.wfile.common.ApiResponse;
+import org.example.wfile.common.ResultCodeEnum;
 import org.example.wfile.storage.constant.StorageType;
 import org.example.wfile.file.entity.FileInfo;
 import org.example.wfile.file.factory.FileOperatorFactory;
-import org.example.wfile.file.service.FileOperater;
+import org.example.wfile.file.service.FileOperator;
 import org.example.wfile.storage.entity.Storage;
 import org.example.wfile.storage.manager.StorageManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,11 @@ public class FileController {
         if (storageManager.containsStorage(storageKey)){
             storage = storageManager.getStorage(storageKey);
         }else {
-            return ApiResponse.error("storage not found");
+            return ApiResponse.error(ResultCodeEnum.STORAGE_NOT_FOUND);
         }
-        FileOperater fileOperater = FileOperatorFactory.getInstance(StorageType.LOCAL);
-        if (storage != null) {
-            path=Paths.get(storage.getBasePath(), path).toString();
-        }
-        List<FileInfo> fileList = fileOperater.getFileList(path);
+        FileOperator fileOperator = storage.getFileOperator();
+        path = Paths.get(storage.getBasePath(), path).toString();
+        List<FileInfo> fileList = fileOperator.getFileList(path);
         return ApiResponse.success(fileList);
     }
 }
